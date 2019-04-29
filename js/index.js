@@ -39,4 +39,88 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+const nav = document.querySelector('nav');
+
+const newA2 = document.createElement('a');
+newA2.setAttribute('href', '#');
+newA2.textContent = 'Why Us';
+
+const newA1 = document.createElement('a');
+newA1.setAttribute('href', '#');
+newA1.textContent = 'Home';
+
+document.querySelector('nav').appendChild(newA1);
+// document.querySelector('nav').prepend(newA2);
+$(nav).prepend(newA2);
+
+
+const nava = document.querySelectorAll('a');
+
+const h1 = document.querySelector('h1');
+
+const button = document.querySelector('button');
+
+const ctaImg = document.querySelector('#cta-img');
+
+const h4 = document.querySelectorAll('.main-content h4');
+
+const text = document.querySelectorAll('.text-content p');
+
+const midImg = document.querySelector('#middle-img');
+
+const contactH4 = document.querySelector('.contact h4');
+
+const contactText = document.querySelectorAll('.contact p');
+
+const footer = document.querySelector('footer p');
+
+
+
+nava[0].textContent = siteContent["nav"]["nav-item-1"];
+nava[1].textContent = siteContent["nav"]["nav-item-2"];
+nava[2].textContent = siteContent["nav"]["nav-item-3"];
+nava[3].textContent = siteContent["nav"]["nav-item-4"];
+nava[4].textContent = siteContent["nav"]["nav-item-5"];
+nava[5].textContent = siteContent["nav"]["nav-item-6"];
+
+h1.textContent = siteContent["cta"]['h1'];
+
+button.textContent = siteContent['cta']['button'];
+
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+
+h4[0].textContent = siteContent['main-content']['features-h4'];
+h4[1].textContent = siteContent['main-content']['about-h4'];
+h4[2].textContent = siteContent['main-content']['services-h4'];
+h4[3].textContent = siteContent['main-content']['product-h4'];
+h4[4].textContent = siteContent['main-content']['vision-h4'];
+
+text[0].textContent = siteContent['main-content']['features-content'];
+text[1].textContent = siteContent['main-content']['about-content'];
+text[2].textContent = siteContent['main-content']['services-content'];
+text[3].textContent = siteContent['main-content']['product-content'];
+text[4].textContent = siteContent['main-content']['vision-content'];
+
+midImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+contactText[0].textContent = siteContent['contact']['address'];
+contactText[1].textContent = siteContent['contact']['phone'];
+contactText[2].textContent = siteContent['contact']['email'];
+
+footer.textContent = siteContent['footer']['copyright'];
+
+nava.forEach((element) => {
+  element.style.color = 'green';
+});
+
+
+
+
+
+
+
+
