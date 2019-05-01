@@ -67,6 +67,8 @@ const h1br = document.createElement('br');
 
 const h1br2 = document.createElement('br');
 
+const h1text = siteContent['cta']['h1'].split(' ');
+
 nava[0].textContent = siteContent["nav"]["nav-item-1"];
 nava[1].textContent = siteContent["nav"]["nav-item-2"];
 nava[2].textContent = siteContent["nav"]["nav-item-3"];
@@ -89,10 +91,10 @@ nav.prepend(newA2);
 
 // h1.textContent = siteContent["cta"]['h1'];
 h1.append(h1br);
-h1.prepend('dom');
-h1.append('is');
+h1.prepend(h1text[0]);
+h1.append(h1text[1]);
 h1.append(h1br2);
-h1.append('awesome');
+h1.append(h1text[2]);
 
 
 
