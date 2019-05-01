@@ -41,19 +41,6 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-const nav = document.querySelector('nav');
-
-const newA2 = document.createElement('a');
-newA2.setAttribute('href', '#');
-newA2.textContent = 'Why Us';
-
-const newA1 = document.createElement('a');
-newA1.setAttribute('href', '#');
-newA1.textContent = 'Home';
-
-document.querySelector('nav').appendChild(newA1);
-// document.querySelector('nav').prepend(newA2);
-$(nav).prepend(newA2);
 
 
 const nava = document.querySelectorAll('a');
@@ -85,6 +72,19 @@ nava[3].textContent = siteContent["nav"]["nav-item-4"];
 nava[4].textContent = siteContent["nav"]["nav-item-5"];
 nava[5].textContent = siteContent["nav"]["nav-item-6"];
 
+const newA2 = document.createElement('a');
+newA2.setAttribute('href', '#');
+newA2.textContent = 'Why Us';
+
+const newA1 = document.createElement('a');
+newA1.setAttribute('href', '#');
+newA1.textContent = 'Home';
+
+const nav = document.querySelector('nav');
+
+nav.append(newA1);
+nav.prepend(newA2);
+
 h1.textContent = siteContent["cta"]['h1'];
 
 button.textContent = siteContent['cta']['button'];
@@ -113,7 +113,7 @@ contactText[2].textContent = siteContent['contact']['email'];
 
 footer.textContent = siteContent['footer']['copyright'];
 
-nava.forEach((element) => {
+document.querySelectorAll('a').forEach((element) => {
   element.style.color = 'green';
 });
 
