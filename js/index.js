@@ -63,7 +63,9 @@ const contactText = document.querySelectorAll('.contact p');
 
 const footer = document.querySelector('footer p');
 
+const h1br = document.createElement('br');
 
+const h1br2 = document.createElement('br');
 
 nava[0].textContent = siteContent["nav"]["nav-item-1"];
 nava[1].textContent = siteContent["nav"]["nav-item-2"];
@@ -85,7 +87,14 @@ const nav = document.querySelector('nav');
 nav.append(newA1);
 nav.prepend(newA2);
 
-h1.textContent = siteContent["cta"]['h1'];
+// h1.textContent = siteContent["cta"]['h1'];
+h1.append(h1br);
+h1.prepend('dom');
+h1.append('is');
+h1.append(h1br2);
+h1.append('awesome');
+
+
 
 button.textContent = siteContent['cta']['button'];
 
@@ -116,7 +125,7 @@ footer.textContent = siteContent['footer']['copyright'];
 document.querySelectorAll('a').forEach((element) => {
   element.style.color = 'green';
 });
-
+console.log(h1br);
 
 
 
