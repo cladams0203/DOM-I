@@ -89,14 +89,12 @@ const nav = document.querySelector('nav');
 nav.append(newA1);
 nav.prepend(newA2);
 
-// h1.textContent = siteContent["cta"]['h1'];
+// h1 line break code
 h1.append(h1br);
 h1.prepend(h1text[0]);
 h1.append(h1text[1]);
 h1.append(h1br2);
 h1.append(h1text[2]);
-
-
 
 button.textContent = siteContent['cta']['button'];
 
@@ -127,7 +125,13 @@ footer.textContent = siteContent['footer']['copyright'];
 document.querySelectorAll('a').forEach((element) => {
   element.style.color = 'green';
 });
-console.log(h1br);
+
+button.addEventListener('mouseover', () => {
+  h1.style.color = 'red';
+});
+button.addEventListener('mouseout', () => {
+  h1.style.color = 'black';
+});
 
 
 
