@@ -43,6 +43,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 const aTags = document.querySelectorAll('nav a');
 console.log(aTags);
-aTags.forEach((e) => {
-  e.appendChild(siteContent.nav["nav-item-1"]);
-})
+const tagData = Object.values(siteContent.nav);
+console.log(tagData);
+for (let i = 0; i < aTags.length; i++) {
+  if(tagData[1].includes('nav')) {
+  aTags[i].textContent = tagData[i];
+  }
+}
