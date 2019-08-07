@@ -40,13 +40,77 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
-
+// navigation menu
+const tag1 = document.createElement('a')
+const tag2 = document.createElement('a')
+tag1.textContent = 'Hello'
+tag2.textContent = 'Goodbye'
+const nav = document.querySelector('nav')
+nav.prepend(tag1);
+nav.appendChild(tag2);
 const aTags = document.querySelectorAll('nav a');
-console.log(aTags);
-const tagData = Object.values(siteContent.nav);
-console.log(tagData);
-for (let i = 0; i < aTags.length; i++) {
-  if(tagData[1].includes('nav')) {
-  aTags[i].textContent = tagData[i];
+const tagKeys = Object.keys(siteContent.nav);
+const tagValues = Object.values(siteContent.nav);
+for (let i = 0; i < aTags.length - 1; i++) {
+  if(tagKeys[i].includes('nav')) {
+  aTags[i + 1].textContent = tagValues[i];
   }
 }
+aTags.forEach((e) => {
+  e.style.color = 'green'
+})
+
+//Header Image
+const headerImg = document.querySelector('#logo-img')
+headerImg.src = siteContent.nav["img-src"];
+
+//  cta section h1 content
+const ctaHeading = document.querySelector('.cta-text h1');
+const headingText = siteContent.cta.h1.split(' ')
+ctaHeading.innerHTML = `${headingText[0]}<br>${headingText[1]}<br>${headingText[2]}`
+
+// cta section button
+const ctaButton = document.querySelector('.cta-text button')
+ctaButton.textContent = siteContent.cta.button
+
+//cta image
+const ctaImg = document.querySelector('#cta-img')
+ctaImg.src = siteContent.cta['img-src']
+
+// main content text content
+const h4text = []
+const ptext = []
+const mainContenth4 = document.querySelectorAll('.text-content h4')
+const mainContentP = document.querySelectorAll('.text-content p')
+const mainContentKeys = Object.keys(siteContent['main-content'])
+const mainContentValues = Object.values(siteContent['main-content'])
+for (let i = 0; i < mainContentKeys.length; i++) {
+  if (mainContentKeys[i].includes('h4')) {
+    h4text.push(mainContentValues[i])
+  }else if (mainContentKeys[i].includes('content')){
+    ptext.push(mainContentValues[i])
+  }
+}
+mainContenth4.forEach((e, i) => {
+  e.textContent = h4text[i]
+})
+mainContentP.forEach((e, i) => {
+  e.textContent = ptext[i]
+})
+
+//middle image
+const middleImg = document.querySelector('#middle-img')
+middleImg.src = siteContent["main-content"]['middle-img-src']
+
+//contact info
+const contacth4 = document.querySelector('.contact h4')
+contacth4.textContent = siteContent.contact["contact-h4"]
+const contactP = document.querySelectorAll('.contact p')
+contactValues = Object.values(siteContent.contact)
+contactP.forEach((e, i) => {
+  e.textContent = contactValues[i + 1]
+})
+
+//footer
+const footerText = document.querySelector('footer p')
+footerText.textContent = siteContent.footer.copyright
